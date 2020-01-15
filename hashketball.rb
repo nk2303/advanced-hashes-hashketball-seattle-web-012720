@@ -237,7 +237,6 @@ def winning_team
       higher_score = score
       winner = team
     end
-  end
   winner
 end
 
