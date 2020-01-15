@@ -220,14 +220,11 @@ def most_points_scored
 end
 
 def winning_team
-  team_score = {}
-  #team_score = {:name1 => 0, :name2 => 0}
+  team_score = {} #{:name1 => 0, :name2 => 0}
   game_hash.each do |place, team|
     team_score[team[:team_name]] = 0
-    team.each do |attribute, data|
-      data.each do |player|
-        team_score[team[:team_name]] = team_score[team[:team_name]] + player[:points]
-      end
+    team[:players].each do |player|
+      team_score[team[:team_name]] = team_score[team[:team_name]] + player[:points]
     end
   end
   higher_score = 0
