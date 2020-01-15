@@ -226,7 +226,8 @@ def winning_team
     team_score[team[:team_name]] = 0
     team.each do |attribute, data|
       data.each do |player|
-        
+        player[:points]
+      end
     end
   end
   best_team
