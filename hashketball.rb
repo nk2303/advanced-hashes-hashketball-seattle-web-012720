@@ -202,25 +202,32 @@ def big_shoe_rebounds
 end
 
 def most_points_scored
-  longer_name = ""
-  longer_length = 0
+  max_point = 0
+  best_player = ""
   game_hash.each do |place, team|
-    team[:players].each do |player|
-      if player[:player_name].length > longer_length
-        longer_length = player[:player_name].length
-        longer_name = player[:player_name]
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |points|
+          if points[:points] > max_point
+            max_point = points[:points]
+            best_player = points[:player_name]
+          end
+        end
       end
     end
   end
-  longer_name
+  best_player
 end
 
 def winning_team
-  team_score = {}#{:name1 => 0, :name2 => 0}
+  team_score = {}
+  #team_score = {:name1 => 0, :name2 => 0}
   game_hash.each do |place, team|
     team_score[team[:team_name]] = 0
-    team[:players].each do |player|
-      team_score[team[:team_name]] = team_score[team[:team_name]] + player[:points]
+    team.each do |attribute, data|
+      data.each do |player|
+        team_score[team[:team_name]] = team_score[team[:team_name]] + player[:points]
+      end
     end
   end
   higher_score = 0
