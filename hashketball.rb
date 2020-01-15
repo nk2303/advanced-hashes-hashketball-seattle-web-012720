@@ -223,10 +223,6 @@ def winning_team
   max_point = 0
   best_team = ""
   team_score = {}
-  team_names.each do |i|
-    team_score[i] = 0
-  end
-  /
   #team_score = {:name1 => 0, :name2 => 0}
   game_hash.each do |place, team|
     team[:team_name] == team_score
