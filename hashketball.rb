@@ -231,8 +231,10 @@ def winning_team
     end
   end
   higher_score = 0
+  winner = ""
   team_score.each do |team,score|
     if score > higher_score
+      higher_score = score
 end
 
 def player_with_longest_name
