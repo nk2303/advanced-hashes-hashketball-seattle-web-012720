@@ -236,6 +236,7 @@ def winning_team
     if score > higher_score
       higher_score = score
       winner = team
+    end
 end
 
 def player_with_longest_name
