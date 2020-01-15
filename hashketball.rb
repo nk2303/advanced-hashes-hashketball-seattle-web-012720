@@ -220,8 +220,6 @@ def most_points_scored
 end
 
 def winning_team
-  max_point = 0
-  best_team = ""
   team_score = {}
   #team_score = {:name1 => 0, :name2 => 0}
   game_hash.each do |place, team|
