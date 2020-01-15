@@ -227,11 +227,7 @@ def winning_team
   game_hash.each do |place, team|
     team_score[team[:team_name]] = 0
       team.each do |attribute, data|
-        if attribute == :players
-          data.each do |points|
-            points[:points]
-          end
-        end
+        
       end
   end
   best_team
