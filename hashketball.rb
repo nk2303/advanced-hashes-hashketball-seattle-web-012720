@@ -226,9 +226,9 @@ def winning_team
   #team_score = {:name1 => 0, :name2 => 0}
   game_hash.each do |place, team|
     team_score[team[:team_name]] = 0
-      team.each do |attribute, data|
-        team_score[team[:team_name]] = team[:players][:points] +
-      end
+    team.each do |attribute, data|
+      team_score[team[:team_name]] = team[:players][:points] +
+    end
   end
   best_team
 end
